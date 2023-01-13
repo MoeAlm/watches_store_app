@@ -129,3 +129,23 @@ Widget buildExpanded() {
         }),
   );
 }
+Widget buildTitle({required String title, required IconData icon}) {
+  return Padding(
+    padding: const EdgeInsets.all(15.0),
+    child: Row(
+      children: [
+        Text(
+          title,
+          style:
+          GoogleFonts.mavenPro(fontSize: 23, fontWeight: FontWeight.bold),
+        ),
+        const Spacer(),
+        Icon(
+          icon,
+          color: Colors.green,
+          size: 27,
+        )
+      ],
+    ),
+  );
+}
