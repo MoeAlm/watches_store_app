@@ -53,39 +53,33 @@ class MyProductsScreen extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Row(
-              children: [
-                Text(
-                  'Trending Watch',
-                  style: GoogleFonts.mavenPro(
-                      fontSize: 23, fontWeight: FontWeight.bold),
-                ),
-                const Spacer(),
-                const Icon(
-                  Icons.watch_later_outlined,
-                  color: Colors.green,
-                  size: 27,
-                )
-              ],
-            ),
-          ),
-          Expanded(
-            child: GridView.builder(
-                scrollDirection: Axis.horizontal,
-                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 500,
-                    childAspectRatio: 1.7,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10),
-                itemCount: products.length,
-                itemBuilder: (context, index) {
-                  return buildItems(products[index]);
-                }),
-          ),
+          buildTitle(title: 'Trending Watches', icon: Icons.watch_later_outlined),
+          buildExpanded(),
+          buildTitle(title: 'Rolex', icon: Icons.watch),
+          buildExpanded(),
         ],
       ),
     );
+  }
+
+  Padding buildTitle({required String title, required IconData icon}) {
+    return Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Row(
+            children: [
+              Text(
+                title,
+                style: GoogleFonts.mavenPro(
+                    fontSize: 23, fontWeight: FontWeight.bold),
+              ),
+              const Spacer(),
+              Icon(
+                icon,
+                color: Colors.green,
+                size: 27,
+              )
+            ],
+          ),
+        );
   }
 }

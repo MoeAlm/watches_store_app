@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:watchs_store_app/models/product_model.dart';
-
 import '../models/home_screen_models.dart';
 
 Widget buildButton(
@@ -98,14 +97,14 @@ Widget buildItems(ProductsModel model){
         ),
         child: Column(
           children: [
-            Image.asset(model.img, width: 200, height: 200,),
+            Image.asset(model.img, width: 100, height: 100,),
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Row(
                 children:  [
-                  Text(model.title, style: TextStyle(fontSize: 25),),
-                  Spacer(),
-                  Text(model.price, style: TextStyle(fontSize: 25, color: Colors.green))
+                  Text(model.title, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                  const Spacer(),
+                  Text(model.price, style: TextStyle(fontSize: 20, color: Colors.green))
                 ],
               ),
             )
@@ -113,5 +112,20 @@ Widget buildItems(ProductsModel model){
         ),
       ),
     ),
+  );
+}
+Widget buildExpanded() {
+  return Expanded(
+    child: GridView.builder(
+        scrollDirection: Axis.horizontal,
+        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+            maxCrossAxisExtent: 500,
+            childAspectRatio: 1.2,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10),
+        itemCount: products.length,
+        itemBuilder: (context, index) {
+          return buildItems(products[index]);
+        }),
   );
 }
