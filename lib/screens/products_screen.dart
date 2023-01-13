@@ -8,7 +8,9 @@ class MyProductsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
     return Scaffold(
+      key:_key,
       appBar: AppBar(
         title: Text(
           'Explore',
@@ -19,7 +21,9 @@ class MyProductsScreen extends StatelessWidget {
         foregroundColor: Colors.black,
         elevation: 0.0,
         leading: IconButton(
-            onPressed: () {}, icon: Image.asset('assets/icons/menu.png')),
+            onPressed: () {
+              _key.currentState!.openDrawer();
+            }, icon: Image.asset('assets/icons/menu.png')),
         actions: [
           IconButton(
             onPressed: () {},
@@ -61,6 +65,7 @@ class MyProductsScreen extends StatelessWidget {
           buildExpanded(),
         ],
       ),
+      drawer: Drawer(),
     );
   }
 }
