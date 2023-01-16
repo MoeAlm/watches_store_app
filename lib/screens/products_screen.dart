@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../models/product_model.dart';
-import '../shared/components.dart';
+import '../shared/components/components.dart';
+import '../shared/components/items_components.dart';
 
 class MyProductsScreen extends StatelessWidget {
   const MyProductsScreen({Key? key}) : super(key: key);
@@ -60,9 +61,9 @@ class MyProductsScreen extends StatelessWidget {
           ),
           buildTitle(
               title: 'Trending Watches', icon: Icons.watch_later_outlined),
-          buildExpanded(),
+          buildGridView(),
           buildTitle(title: 'Rolex', icon: Icons.watch),
-          buildExpanded(),
+          buildGridView(),
         ],
       ),
       drawer: Drawer(),

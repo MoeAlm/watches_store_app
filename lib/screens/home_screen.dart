@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/home_screen_models.dart';
-import '../shared/components.dart';
+import '../shared/components/components.dart';
 
 class MyHomeScreen extends StatelessWidget {
 

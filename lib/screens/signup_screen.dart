@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../shared/components.dart';
+import '../shared/components/button_components.dart';
 import 'home_screen.dart';
 
 class SignUpScreen extends StatelessWidget {
